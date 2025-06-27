@@ -7,7 +7,7 @@ pool:
 variables:
   azureServiceConnection: 'azureumi_serviceconnection'                  # Your Azure service connection name
   azureSubscriptionId: '37fd4306-4815-4e3a-a2da-6905810ccba6'  # Replace with your Azure subscription ID
-  workingDirectory: '.'                                   # Path to your Terraform files in repo
+  workingDirectory: 'storage account'                                   # Path to your Terraform files in repo
 
 stages:
 - stage: Terraform
