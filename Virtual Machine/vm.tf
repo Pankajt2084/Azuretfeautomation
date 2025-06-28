@@ -33,10 +33,6 @@ resource "azurerm_linux_virtual_machine" "vm" {
   size                  = "Standard_B1s"
   admin_username      = "azureuser"
 
-  network_interface_ids = [
-    azurerm_network_interface.nic.id
-  ]
-
   disable_password_authentication = false
 
   admin_password = "YourStrongP@ssw0rd!"  # Use a strong password here
