@@ -1,7 +1,10 @@
 trigger:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 - virtual machine
 =======
+=======
+>>>>>>> Stashed changes
   branches:
     include:
       - master      # or whichever branch you want to trigger on
@@ -9,6 +12,9 @@ trigger:
     include:
       - 'Virtual Machine/azure-pipelines.yml'
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 schedules:
