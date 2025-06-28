@@ -1,5 +1,5 @@
 trigger:
-- master
+- storage-account
 
 pool:
   name: 'selfhosted'  # Your self-hosted Windows agent pool name
