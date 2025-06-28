@@ -50,7 +50,8 @@ stages:
                 $env:ARM_SUBSCRIPTION_ID = "$(azureSubscriptionId)"
 
                 Write-Host "Initializing Terraform..."
-                terraform init -upgrade -input=false           
+                terraform init -reconfigure
+
 
                 Write-Host "Planning Terraform..."
                 terraform plan -out=tfplan
