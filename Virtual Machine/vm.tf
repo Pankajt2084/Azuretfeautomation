@@ -1,24 +1,23 @@
-resource "azurerm_resource_group" "rg" {
-  name     = "vm-rg"
-  location = "East US"
+provider "azurerm" {
+  features {}
 }
 
 resource "azurerm_virtual_network" "vnet" {
-  name                = "demo-vnet"
+  name                = "app-vnet"
   address_space       = ["10.0.0.0/24"]
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 }
 
 resource "azurerm_subnet" "subnet" {
-  name                 = "demo-subnet"
+  name                 = "app-subnet"
   resource_group_name  = azurerm_resource_group.rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.1.0/28"]
 }
 
 resource "azurerm_network_interface" "nic" {
-  name                = "demo-nic"
+  name                = "my-nic"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
@@ -30,16 +29,13 @@ resource "azurerm_network_interface" "nic" {
 }
 
 resource "azurerm_linux_virtual_machine" "vm" {
-  name                = "demo-vm"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
-  network_interface_ids = [
-    azurerm_network_interface.nic.id,
-  ]
-  size               = "Standard_B1s"
-  admin_username     = "azureuser"
-
-  admin_password     = "P@ssw0rd1234!"  # Not recommended. Use Key Vault or SSH keys.
+  name                  = "aeuslpvm01"
+  location              = azurerm_resource_group.rg.location
+  resource_group_name   = azurerm_resource_group.rg.name
+  network_interface_ids = [azurerm_network_interface.nic.id]
+  size                  = "Standard_B1s"
+  admin_username        = "azureuser"
+  admin_password        = "P@ssword1234!"  # Use SSH or Key Vault for real use
 
   os_disk {
     caching              = "ReadWrite"
