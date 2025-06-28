@@ -1,5 +1,5 @@
 trigger:
-  - master
+- virtual-machine
 
 schedules:
   - cron: "0 * * * *" # Every hour
