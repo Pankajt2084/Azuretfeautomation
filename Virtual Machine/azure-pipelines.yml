@@ -4,7 +4,7 @@ trigger:
       - master
   paths:
     include:
-      - 'Virtual Machine/azure-pipelines.yml'
+      - 'Virtual Machine'
 
 schedules:
   - cron: "0 * * * *" # Every hour
