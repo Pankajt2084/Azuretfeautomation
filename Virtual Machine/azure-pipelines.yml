@@ -7,7 +7,7 @@ schedules:
     branches:
       include:
         - master
-    always: true
+    always: "true"
 
 pool:
   name: "selfhosted" # Your self-hosted Windows agent pool name
