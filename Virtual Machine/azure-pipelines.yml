@@ -6,13 +6,13 @@ trigger:
     include:
       - 'Virtual Machine'
 
-schedules:
-  - cron: "0 * * * *" # Every hour
-    displayName: Hourly Check
-    branches:
-      include:
-        - master
-    always: "true"
+# schedules:
+#  - cron: "0 * * * *" # Every hour
+ #   displayName: Hourly Check
+ #   branches:
+  #    include:
+   #     - master
+    #always: "true"
 
 pool:
   name: "selfhosted" # Your self-hosted Windows agent pool name
